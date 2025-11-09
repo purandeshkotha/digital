@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Footer from './components/Footer';
 import MobileLogin from './components/MobileLogin';
+import LoadingSpinner from './components/LoadingSpinner';
 import { ProgressProvider } from './context/ProgressContext';
 import ErrorBoundary from './components/ErrorBoundary';
 
@@ -10,12 +11,6 @@ const Lessons = lazy(() => import('./components/Lessons'));
 const Progress = lazy(() => import('./components/Progress'));
 const Practice = lazy(() => import('./components/Practice'));
 const Chatbot = lazy(() => import('./components/Chatbot'));
-
-const LoadingSpinner = () => (
-  <div className="flex justify-center items-center p-8">
-    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-  </div>
-);
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');

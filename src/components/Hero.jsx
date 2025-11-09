@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Play, ArrowRight, Smartphone, Monitor, Wifi } from 'lucide-react';
+import React from 'react';
+import { Play, Smartphone, Monitor, Wifi } from 'lucide-react';
 import { getTranslation } from '../utils/translations';
-import DemoModal from './DemoModal';
 
 const Hero = ({ currentLanguage, onNavigate }) => {
-  const [isDemoOpen, setIsDemoOpen] = useState(false);
   const t = getTranslation(currentLanguage);
 
   return (
@@ -39,13 +37,7 @@ const Hero = ({ currentLanguage, onNavigate }) => {
                 <Play className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform" />
                 {t.startLearning}
               </button>
-              <button 
-                onClick={() => setIsDemoOpen(true)}
-                className="flex items-center justify-center px-10 py-4 border-2 border-white/30 text-white rounded-xl hover:bg-white/10 transition-all duration-300 backdrop-blur-sm font-semibold text-lg"
-              >
-                {t.watchDemo}
-                <ArrowRight className="h-6 w-6 ml-3" />
-              </button>
+
             </div>
           </div>
           
@@ -108,11 +100,7 @@ const Hero = ({ currentLanguage, onNavigate }) => {
           </div>
         </div>
         
-        <DemoModal
-          isOpen={isDemoOpen}
-          onClose={() => setIsDemoOpen(false)}
-          currentLanguage={currentLanguage}
-        />
+
       </div>
     </section>
   );
